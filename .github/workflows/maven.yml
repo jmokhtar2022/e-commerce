@@ -66,16 +66,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
-      - name: Build backend Docker image
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: backend/.
+          file: Dockerfile
           push: true
-          tags: mokhtar1234/app-backend:latest
-
-      - name: Build frontend Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: frontend/.
-          push: true
-          tags: mokhtar1234/app-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
