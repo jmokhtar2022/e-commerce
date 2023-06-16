@@ -43,9 +43,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-      - name: Set Node.js environment variable
+      - name: Enable OpenSSL legacy provider
         run: |
-          echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+          cd frontend
+          npm config set legacy-peer-deps true
 
       - name: Install dependencies
         run: |
