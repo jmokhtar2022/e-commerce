@@ -45,8 +45,8 @@ jobs:
           node-version: '18'
       - name: Enable OpenSSL legacy provider
         run: |
-          cd frontend
-          npm config set legacy-peer-deps true
+          echo 'export NODE_OPTIONS=--openssl-legacy-provider' >> $GITHUB_ENV
+
 
       - name: Install dependencies
         run: |
