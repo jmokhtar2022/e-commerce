@@ -23,6 +23,7 @@ jobs:
         run: |
           echo "::set-output name=image_name::$(awk '/image:/ {print $$2}' docker-compose.yml)"
 
+
       - name: Build and push Docker images
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ steps.extract-image-name.outputs.image_name }}:${{ github.sha }} .
