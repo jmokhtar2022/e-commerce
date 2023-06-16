@@ -30,4 +30,4 @@ jobs:
     - name: Build with Maven
       run: |
           cd backend
-          ./mvnw clean install
+          mvn clean install
