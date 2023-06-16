@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: CI/CD back end && front end
+name: CI / CD  back end && front end
 
 on:
   push:
@@ -53,13 +53,3 @@ jobs:
         run: |
           cd frontend
           npm run build
-
-      - name: Build & push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: mokhtar1234/ecommerce
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}     
