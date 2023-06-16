@@ -23,10 +23,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       
-      - name: Build and push
+      - name: Build and push back end image
         uses: docker/build-push-action@v4
         with:
           context: backend
           file: backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce:backend-app
+      
+      - name: Build and push back end image
+        uses: docker/build-push-action@v4
+        with:
+          context: frontend
+          file: frontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce:frontend-app
