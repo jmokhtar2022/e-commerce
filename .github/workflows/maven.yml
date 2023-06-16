@@ -61,7 +61,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
         
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v1
+        with:
+           version: v0.7.0
         
       - name: Build and push
         uses: docker/build-push-action@v4
