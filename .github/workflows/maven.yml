@@ -69,6 +69,5 @@ jobs:
       - name: Build and push backend Docker image
         run: |
           cd backend
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app:latest .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app:latest ./backend
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend-app:latest
-        working-directory: backend
