@@ -71,3 +71,4 @@ jobs:
           cd backend
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app:latest .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend-app:latest
+        working-directory: backend
