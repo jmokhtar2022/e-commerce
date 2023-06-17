@@ -28,15 +28,15 @@ jobs:
 
       - name: Deploy database to AKS
         run: |
-          kubectl apply -f manifests/db-deploment.yaml
-          kubectl apply -f manifests/db-service.yaml
+          kubectl apply -f ./manifests/db-deploment.yaml
+          kubectl apply -f ./manifests/db-service.yaml
 
       - name: Deploy backend to AKS
         run: |
-         kubectl apply -f manifests/backend-deploment.yaml
-         kubectl apply -f manifests/backend-service.yaml
+         kubectl apply -f ./manifests/backend-deploment.yaml
+         kubectl apply -f ./manifests/backend-service.yaml
 
       - name: Deploy frontend to AKS
         run: |
-         kubectl apply -f manifests/frontend-deploment.yaml
-         kubectl apply -f manifests/frontend-service.yaml
+         kubectl apply -f ./manifests/frontend-deploment.yaml
+         kubectl apply -f ./manifests/frontend-service.yaml
