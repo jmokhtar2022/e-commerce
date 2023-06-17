@@ -28,12 +28,12 @@ jobs:
         
 
       - name: List directory contents
-        run: pwd
+        run: ls ./manifests
 
       - uses: Azure/k8s-deploy@v4
         with:
            action: deploy
            manifests: |
-              ./manifests/backend-deployment.yaml
-              ./manifests/backend-service.yaml
+              backend-deployment.yaml
+              backend-service.yaml
 
