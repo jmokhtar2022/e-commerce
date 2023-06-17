@@ -30,8 +30,8 @@ jobs:
         with:
            action: deploy
            manifests: |
-              manifests/backend-deployment.yml
-              manifests/backend-service.yml
+              manifests/backend-deployment.yaml
+              manifests/backend-service.yaml
 
       - name: Deploy backend to AKS
         run: |
