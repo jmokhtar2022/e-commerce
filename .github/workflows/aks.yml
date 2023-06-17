@@ -18,7 +18,9 @@ jobs:
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
           enable-AzPSSession: true 
-          
+      - run: |
+          az webapp list --query "[?state=='Running']"
+  
       - name: Select Azure subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
