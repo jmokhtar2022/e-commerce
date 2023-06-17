@@ -25,9 +25,10 @@ jobs:
 
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
+        
 
       - name: List directory contents
-        run: ls -R
+        run: pwd
 
       - uses: Azure/k8s-deploy@v4
         with:
