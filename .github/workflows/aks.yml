@@ -34,6 +34,6 @@ jobs:
         with:
            action: deploy
            manifests: |
-              manifests/backend-deployment.yaml
-              manifests/backend-service.yaml
+              ./manifests/backend-deployment.yaml
+              ./manifests/backend-service.yaml
 
