@@ -29,6 +29,10 @@ jobs:
 
       - uses: Azure/k8s-deploy@v4
         with:
-           action: deploy
-           manifests: kubernetes/backdeployment.yaml
+          action: deploy
+          manifests: |
+            manifests/backdeployment.yaml
+            manifests/backservice.yaml
+      
+
              
