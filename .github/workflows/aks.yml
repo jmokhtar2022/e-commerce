@@ -26,10 +26,12 @@ jobs:
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
 
-      - name: Deploy database to AKS
-        run: |
-          kubectl apply -f ./manifests/db-deploment.yaml
-          kubectl apply -f ./manifests/db-service.yaml
+      - uses: Azure/k8s-deploy@v4
+        with:
+           action: deploy
+           manifests: |
+              manifests/backend-deployment.yml
+              manifests/backend-service.yml
 
       - name: Deploy backend to AKS
         run: |
