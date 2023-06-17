@@ -29,8 +29,8 @@ jobs:
 
       - name: Deploy database to AKS
         run: |
-          kubectl apply -f ./manifests/backdeployment.yaml
-          kubectl apply -f ./manifests/backservice.yaml
+          kubectl apply -f manifests/backdeployment.yaml
+          kubectl apply -f manifests/backservice.yaml
 
       - name: Deploy backend to AKS
         run: |
