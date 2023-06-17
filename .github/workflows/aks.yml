@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
   
-      - name: Login via Az module
+      - name: Login via Az
         uses: azure/login@v1
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
