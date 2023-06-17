@@ -26,7 +26,8 @@ jobs:
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
   
-
+      - name: Change working directory to manifests
+        run: cd manifests
       - uses: Azure/k8s-deploy@v4
         with:
           action: deploy
