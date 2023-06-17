@@ -26,6 +26,9 @@ jobs:
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
 
+      - name: List directory contents
+        run: ls -R
+
       - uses: Azure/k8s-deploy@v4
         with:
            action: deploy
@@ -33,12 +36,3 @@ jobs:
               manifests/backend-deployment.yaml
               manifests/backend-service.yaml
 
-      - name: Deploy backend to AKS
-        run: |
-         kubectl apply -f ./manifests/backend-deploment.yaml
-         kubectl apply -f ./manifests/backend-service.yaml
-
-      - name: Deploy frontend to AKS
-        run: |
-         kubectl apply -f ./manifests/frontend-deploment.yaml
-         kubectl apply -f ./manifests/frontend-service.yaml
