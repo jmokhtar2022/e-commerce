@@ -31,5 +31,5 @@ jobs:
         with:
            action: deploy
            manifests: |
-              manifests/backdeployment.yaml
-              manifests/backservice.yaml
+             kubernetes/backdeployment.yaml
+             kubernetes/backservice.yaml
