@@ -31,5 +31,5 @@ jobs:
         with:
            action: deploy
            manifests: |
-             stageDevops/e-commerce/kubernetes/backdeployment.yaml
-             stageDevops/e-commerce/kubernetes/backservice.yaml
+             /e-commerce/kubernetes/backdeployment.yaml
+             /e-commerce/kubernetes/backservice.yaml
