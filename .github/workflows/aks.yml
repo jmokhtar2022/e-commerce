@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   deploy:
     runs-on: windows-latest
@@ -18,7 +22,6 @@ jobs:
           enable-AzPSSession: true
         
     
-  
 
       - name: Select Azure subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
