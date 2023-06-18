@@ -30,11 +30,3 @@ jobs:
           file: frontend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce:frontend-app
-
-      - name: Build and push db
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce:db
