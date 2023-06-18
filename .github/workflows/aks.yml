@@ -19,22 +19,25 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
           enable-AzPSSession: true 
     
-
       - name: Select Azure subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
-  
-      - name: List directory contents
-        run: ls 
-      
+
+      - uses: azure/setup-kubectl@v2.0
+
+      - name: Set up Kubernetes context
+        uses: Azure/k8s-set-context@v1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ env.KUBECONFIG }}
       - uses: Azure/k8s-deploy@v4
         with:
           action: deploy
           manifests: |
-            backdeployment.yaml
-            backservice.yaml
+            manifests/backdeployment.yaml
+            manifests/backservice.yaml
       
 
              
