@@ -35,8 +35,8 @@ jobs:
         with:
           action: deploy
           manifests: |
-            manifests/backdeployment.yml
-            manifests/backservice.yml
+            backdeployment.yml
+            
       
 
              
