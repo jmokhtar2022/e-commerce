@@ -1,4 +1,4 @@
-name: AKS Deployment
+name: AKS Deploymentt
 
 on:
   workflow_run:
