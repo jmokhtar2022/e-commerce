@@ -17,4 +17,4 @@ FROM nginx:latest AS ngi
 # Copying compiled code and nginx config to different folder
 # NOTE: This path may change according to your project's output folder 
 COPY --from=build /app/dist/shop /usr/share/nginx/html
-COPY /nginx.conf  /etc/nginx/conf.d/default.conf
+COPY /nginx/default.conf /etc/nginx/conf.d/
