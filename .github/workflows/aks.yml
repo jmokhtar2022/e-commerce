@@ -1,10 +1,8 @@
 name: AKS Deploymentt
 
 on:
-  workflow_run:
-    workflows: ["CD back end && front end"]
-    types:
-      - completed
+  push:
+    branches: [ "main" ]
 
 permissions:
   id-token: write
