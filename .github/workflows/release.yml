@@ -2,7 +2,7 @@ name: CD back end && front end
 
 on:
   workflow_run:
-    workflows: ["AKS Deploymen"]
+    workflows: ["CI back end && front end"]
     types:
       - completed  
 
