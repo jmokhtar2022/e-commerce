@@ -19,14 +19,4 @@ spec:
           image: mokhtar1234/ecommerce:backend-app
           ports:
             - containerPort: 8080
-        - name: database
-          image: postgres:latest
-          ports:
-            - containerPort: 5432
-          env:
-            - name: POSTGRES_USER
-              value: postgres
-            - name: POSTGRES_PASSWORD
-              value: root
-            - name: POSTGRES_DB
-              value: postgres
+        
