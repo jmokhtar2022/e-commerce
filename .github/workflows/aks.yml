@@ -34,13 +34,7 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
-
-      - name: Deploy DB postgre
-        run: |
-          cd manifests
-          kubectl apply -f db-deployment.yaml
-          kubectl apply -f db-service.yaml
-
+          
       - name: Deploy back end 
         run: |
           cd manifests

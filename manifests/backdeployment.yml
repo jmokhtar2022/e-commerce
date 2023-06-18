@@ -16,11 +16,17 @@ spec:
     spec:
       containers:
         - name: backend
-          image: mokhtar1234/ecommerce:backend-app
+          image: your-docker-registry/your-repository:backend-${{ github.sha }}
           ports:
             - containerPort: 8080
-         env:
-            - name: DATABASE_HOST
-              value: database-service # Specify the service name of the database
-          dependsOn:
-            - name: database-service # Specify the service name of the database
+        - name: database
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: your-username
+            - name: POSTGRES_PASSWORD
+              value: your-password
+            - name: POSTGRES_DB
+              value: your-database-name
