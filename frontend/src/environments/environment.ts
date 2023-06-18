@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-export const apiUrl = 'http://backend-service:8080/api';
+export const apiUrl = 'http://database-service:8080/api';
 
 
 /*
