@@ -25,13 +25,13 @@ jobs:
       - name: Get AKS credentials
         run: az aks get-credentials --resource-group stageDevops --name stage
 
-      - uses: azure/setup-kubectl@v2.0
-
       - name: Set up Kubernetes context
         uses: Azure/k8s-set-context@v1
         with:
           method: kubeconfig
-          kubeconfig: ${{ env.KUBECONFIG }}
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+
+
       - uses: Azure/k8s-deploy@v4
         with:
           action: deploy
