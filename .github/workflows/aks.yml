@@ -27,7 +27,7 @@ jobs:
         run: az aks get-credentials --resource-group stageDevops --name stage
   
       - name: Change working directory to manifests
-        run: cd ${{ github.workspace }}/manifests
+        run: cd e-commerce/manifests
       
       - uses: Azure/k8s-deploy@v4
         with:
