@@ -1,8 +1,0 @@
-{
-    "/api/*": {
-      "target": "http://20.106.65.57:8080",
-      "secure": false,
-      "logLevel": "debug"
-    }
-  }
-  
