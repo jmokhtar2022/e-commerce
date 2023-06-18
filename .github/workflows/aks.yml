@@ -34,9 +34,12 @@ jobs:
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
       - name: Deploy to AKS
-        run: |
-          cd manifests
-          kubectl apply -f backdeployment.yml
+        uses: Azure/k8s-deploy@v4
+        with:
+          action: deploy
+          manifests: |
+              manifests/backdeployment.yaml
+              manifests/backservice.yaml
       
 
              
