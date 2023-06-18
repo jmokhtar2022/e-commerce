@@ -27,14 +27,14 @@ jobs:
         run: az aks get-credentials --resource-group stageDevops --name stage
   
       - name: List directory contents
-        run: ls -R
+        run: ls 
       
       - uses: Azure/k8s-deploy@v4
         with:
           action: deploy
           manifests: |
-            manifests/backdeployment.yaml
-            manifests/backservice.yaml
+            backdeployment.yaml
+            backservice.yaml
       
 
              
