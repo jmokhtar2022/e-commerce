@@ -24,4 +24,5 @@ spec:
               value: postgres
             - name: POSTGRES_PASSWORD
               value: root
-
+            - name: POSTGRES_DB
+              value: postgres

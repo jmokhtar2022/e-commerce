@@ -19,3 +19,8 @@ spec:
           image: mokhtar1234/ecommerce:backend-app
           ports:
             - containerPort: 8080
+         env:
+            - name: DATABASE_HOST
+              value: database-service # Specify the service name of the database
+          dependsOn:
+            - name: database-service # Specify the service name of the database
