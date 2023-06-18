@@ -1,4 +1,4 @@
-name: AKS Deploymentt
+name: AKS Deployment
 
 on:
   push:
