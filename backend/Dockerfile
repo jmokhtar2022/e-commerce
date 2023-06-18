@@ -1,7 +1,4 @@
-FROM openjdk:11
-
-ARG JAR_FILE
-
-COPY ${JAR_FILE} /app.jar
-
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+COPY backend/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
