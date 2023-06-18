@@ -2,7 +2,7 @@ name: AKS Deployment
 
 on:
   workflow_run:
-    workflows: ["CD back end && front end "]
+    workflows: ["CD back end && front end"]
     types:
       - completed
 
