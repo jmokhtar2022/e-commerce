@@ -35,11 +35,23 @@ jobs:
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
 
-      - name: Deploy back endd
+      - name: Deploy DB postgre
+        run: |
+          cd manifests
+          kubectl apply -f db-deployment.yaml
+          kubectl apply -f db-service.yaml
+
+      - name: Deploy back end 
         run: |
           cd manifests
           kubectl apply -f backdeployment.yml
           kubectl apply -f backservice.yml
+
+      - name: Deploy front end 
+        run: |
+          cd manifests
+          kubectl apply -f frontend-deployment.yaml
+          kubectl apply -f frontend-service.yaml
 
     
        
