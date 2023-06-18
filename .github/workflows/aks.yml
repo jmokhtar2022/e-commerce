@@ -35,7 +35,7 @@ jobs:
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
 
-      - name: Deploy back end 
+      - name: Deploy back endd
         run: |
           cd manifests
           kubectl apply -f backdeployment.yml
