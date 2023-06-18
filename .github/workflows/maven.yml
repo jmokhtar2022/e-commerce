@@ -9,11 +9,10 @@
 name: CI back end && front end
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+   workflow_run:
+     workflows: ["AKS Deploymen"]
+     types:
+       - completed    
 jobs:
   backend:
 
