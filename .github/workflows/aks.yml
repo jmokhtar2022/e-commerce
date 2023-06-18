@@ -33,13 +33,21 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
-      - name: Deploy to AKS
-        uses: Azure/k8s-deploy@v4
-        with:
-          action: deploy
-          manifests: |
-              manifests/backdeployment.yaml
-              manifests/backservice.yaml
-      
+      - name: Deploy DB
+        run: |
+          cd manifests
+          kubectl apply -f db-deployment.yaml
+          kubectl apply -f db-service.yaml
 
-             
+      - name: Deploy back
+        run: |
+          cd manifests
+          kubectl apply -f backdeployment.yml
+          kubectl apply -f backservice.yml
+
+      - name: Deploy front
+        run: |
+          cd manifests
+          kubectl apply -f frontend-deployment.yaml
+          kubectl apply -f frontend-service.yaml
+       
