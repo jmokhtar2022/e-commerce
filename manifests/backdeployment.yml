@@ -18,4 +18,4 @@ spec:
         - name: backend
           image: mokhtar1234/ecommerce:backend-app
           ports:
-            - containerPort: 8080
+            - containerPort: 80
