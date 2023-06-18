@@ -26,7 +26,7 @@ jobs:
       - name: Build and push back end image
         run: |
           cd backend
-          docker build --build -arg JAR_FILE=target/*.jar -t ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce .
+          docker build --build-arg JAR_FILE=target/*.jar -t ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce .
 
       - name: Push back end image to DockerHub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce:backend-app
