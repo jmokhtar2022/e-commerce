@@ -19,4 +19,12 @@ spec:
           image: mokhtar1234/ecommerce:backend-app
           ports:
             - containerPort: 8080
-        
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://database-service:5432/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
+          dependsOn:
+            - name: database-service
